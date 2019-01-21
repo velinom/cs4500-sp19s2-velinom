@@ -2,6 +2,7 @@ package edu.neu.cs4500.services;
 
 import edu.neu.cs4500.models.User;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -27,5 +28,20 @@ public class UserService {
     @GetMapping("/api/user")
     public List<User> findAllUsers() {
         return users;
+    }
+
+    /**
+     * Gets a specific user by their unique user Id
+     * @param id The Id of the user to search for.
+     * @return The user associated with the given Id, or null if there is none.
+     */
+    @GetMapping("/api/user/{userId}")
+    public User findUserById(@PathVariable("userId") Integer id) {
+        for (User user : users) {
+            if (user.getId().equals(id)) return user;
+        }
+
+        // If there was no user with the given id
+        return null;
     }
 }
