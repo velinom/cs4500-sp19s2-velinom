@@ -11,6 +11,22 @@ public class User {
     private String firstName;
     private String lastName;
 
+    /**
+     * Creates a new instance of user and populates it with the given information.
+     * @param id         The unique id for this user.
+     * @param username   The username.
+     * @param password   The user's password, stored in plaintext.
+     * @param firstName  The user's first name.
+     * @param lastName   The user's last name.
+     */
+    public User(Integer id, String username, String password, String firstName, String lastName) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     /*
      * GETTERS AND SETTERS
      */
