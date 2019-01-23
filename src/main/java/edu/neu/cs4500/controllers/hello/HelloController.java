@@ -1,5 +1,6 @@
 package edu.neu.cs4500.controllers.hello;
 
+import edu.neu.cs4500.models.HelloObject;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
